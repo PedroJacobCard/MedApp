@@ -20,7 +20,13 @@ const pacientSchema = new Schema({
     },
     phone: {
         type: String,
-        required: [true, 'Pacient phone is required.']
+        required: [true, 'Pacient phone is required.'],
+        validate: {
+            validator: function (phone) {
+                return /^\+43[1-9][0-9]{3,12}$/.test(phone);
+            },
+            message: (props) => `${props.value} This is not a valid number. Please use the following format +43 999 9999999`
+        }
     },
     createdAt: {
         type: Date,
