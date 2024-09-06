@@ -14,3 +14,4 @@ The app is built in the MVC design in order to bring a better understanding of t
 - multer
 - path
 - pdfkit
+- jest
